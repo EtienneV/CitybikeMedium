@@ -1,0 +1,64 @@
+<!doctype html>
+<html ng-app="app">
+  <head style="height=100%">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="angular.min.js"></script>
+    <script src="components.js"></script>
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link href="starter-template.css" rel="stylesheet">
+
+    <meta property="og:image" content="http://etiennevilledieu.fr/velov/img_velov.png" />
+  </head>
+  <body style="height=100%">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Vélo'v graph</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class=""><a href="http://etiennevilledieu.fr/velov">Carte</a></li>
+            <li class="active"><a href="#">Graphiques</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+    </nav>
+
+      <div ng-controller="ListeStations" style="height=100%">
+
+        <div class="row" style="height=100%">
+          <div class="col-lg-3" style="overflow:auto; height:800px">
+            
+            <h3>Combien de Vélo'v disponibles ?</h3>
+
+            <ul class="list-group">
+              <a href="#" ng-repeat="station in data.listeStations" ng-click="data.selectionStation($index, station.uid)" class="list-group-item {{station.active}}">{{station.nom}}</a>
+            </ul>
+          </div>
+
+          
+
+          <div class="col-lg-9">
+            <h1>{{data.stationCourante.nom}}</h1>
+            <canvas id="myChart" width="1300" height="800"></canvas>
+          </div>
+
+        </div>
+
+      </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html ng-app="app">
+  <head style="height=100%">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="angular.min.js"></script>
+    <script src="components.js"></script>
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link href="starter-template.css" rel="stylesheet">
+
+    <script src='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v2.2.2/mapbox.css' rel='stylesheet' />
+
+    <meta property="og:image" content="http://etiennevilledieu.fr/velov/img_velov.png" />
+
+    <style>
+      body { margin:0; padding:0; background-color: #333;}
+      #map { position:absolute; top:55px; bottom:0; width:100%;}
+
+      .progresstime {
+        height: 3px;
+        position:absolute; 
+        top:50px; 
+        bottom:0; 
+        width:0%;
+        background-color: red;
+      }
+    </style>
+
+  </head>
+  <body style="height=100%">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Vélo'v graph</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Carte</a></li>
+            <li class=""><a href="http://etiennevilledieu.fr/velov/graph.html">Graphiques</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+    </nav>
+
+      <div ng-controller="TempsReelController" style="height=100px">
+
+        <div class="progresstime"></div>
+
+        <div id='map' style="height=1000px"></div>
+
+      </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+      
+    </script>
+  </body>
+</html>
